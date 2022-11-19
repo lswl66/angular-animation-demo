@@ -1,0 +1,11 @@
+<nav>
+  <a id="home" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page"> Home </a>
+  |
+  <a id="angular" routerLink="/angular" routerLinkActive="active" ariaCurrentWhenActive="page"> Angular-Animation </a>
+  |
+  <a id="css" routerLink="/css" routerLinkActive="active" ariaCurrentWhenActive="page"> Css-Animation</a>
+</nav>
+
+<div [@routeAnimations]="getRouteAnimationData()" class="container">
+  <router-outlet></router-outlet>
+</div>

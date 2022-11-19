@@ -1,0 +1,75 @@
+.animation-container{
+    .close-open .box{
+        border: 1px solid #000;
+        &.init{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            transition: all 500ms;
+        }
+        &.closed{
+            width: 100px;
+            height: 50px;
+            background-color: blue;
+            opacity: 0.2;
+            transition: all 1s;
+        }
+        &.open{
+            width: 300px;
+            height: 150px;
+            background-color: yellow;
+            transition: all 500ms;
+        }
+    }
+
+    .query-list{
+        .list{
+            .item{
+                width: 200px;
+                height: 60px;
+                border: 1px solid #000;
+                overflow: hidden;
+                cursor: pointer;
+                animation: itemEnterAnimation 0.3s 0.1s ease, itemShowAnimation 0.3s cubic-bezier(1, 0.04, 1, 0.08);
+                @keyframes itemShowAnimation {
+                    from{
+                        opacity: 0;
+                    }
+                    to{
+                        opacity: 1;
+                    }
+                }
+                @keyframes itemEnterAnimation {
+                    from{
+                        width: 10px;
+                        transform: translateX(50px);
+                    }
+                    to{
+                        transform: translateX(0px);
+                    }
+                }
+                &.delete{
+                    animation: itemLeaveAnimation 0.3s ease forwards, itemOpacityAnimation 0.3s 0.2s ease forwards;
+                    @keyframes itemOpacityAnimation {
+                        from{
+                            opacity: 1;
+                        }
+                        to{
+                            opacity: 0;
+                        }
+                    }
+                    @keyframes itemLeaveAnimation {
+                        from{
+                            transform: translateX(0px);
+                        }
+                        to{
+                            transform: translateX(50px);
+                            height: 0;
+                            width: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

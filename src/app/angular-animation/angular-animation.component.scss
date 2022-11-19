@@ -1,0 +1,23 @@
+.animation-container{
+    width: 100%;
+
+    &.close-open{
+        width: 200px;
+        border: 1px solid #000;
+    }
+
+    &.query-list{
+        .list{
+            overflow: hidden;
+        }
+        .inner{
+            display: flex;
+        }
+        .query-item{
+            width: 200px;
+            height: 100px;
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+    }
+}

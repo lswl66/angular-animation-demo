@@ -1,0 +1,26 @@
+<p>css-animation works!</p>
+<div class="animation-container">
+  <div>-----------------------------------------</div>
+  <div class="inner close-open">
+    <div class="box" [ngClass]="state"></div>
+    <div class="buttons">
+      <button (click)="setState('closed')">close</button>
+      <button (click)="setState('open')">open</button>
+      <button (click)="setState('init')">init</button>
+    </div>
+  </div>
+  <div>-----------------------------------------</div>
+  <div class="inner query-list">
+    <div class="list">
+      <div *ngFor="let item of itemList, index as i" class="item" (click)="deleteItem($event, i)">
+        <div>say：{{item.name}}</div>
+        <div>answer：你是第{{i + 1}}项</div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button (click)="addItem()">+1个喽</button>
+      <button (click)="initList()">init</button>
+    </div>
+  </div>
+  <div>-----------------------------------------</div>
+</div>

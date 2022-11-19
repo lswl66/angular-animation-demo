@@ -1,0 +1,55 @@
+<p>angular-animation works!</p>
+<div class="animation-container" [@caseInOut]="animationState">
+  `query animate transition`
+  <div *ngIf="animationState === 'init'">caseInOut</div>
+  <button (click)="setState('toggle')">toggle</button>
+  <button (click)="setState('init')">init</button>
+</div>
+<div>-----------------------------------------</div>
+<div class="animation-container close-open" [@CloseOpen]="animationState">
+  `state animate transition`
+  <div class="inner">
+    <div></div>
+    <div class="buttons">
+      <button (click)="setState('closed')">close</button>
+      <button (click)="setState('open')">open</button>
+      <button (click)="setState('init')">init</button>
+    </div>
+  </div>
+</div>
+<div>-----------------------------------------</div>
+<div class="animation-container query-list">
+  `group animate transition`
+  <div class="inner">
+    <div class="list">
+      <div [@ItemAnimation]="animationState" class="query-item" *ngFor="let item of itemList; index as i"
+        (click)="deleteItem(i)">
+        <div>say：{{item.name}}</div>
+        <div>answer：你是第{{i + 1}}项</div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button (click)="addItem()">+1个喽</button>
+      <button (click)="initList()">init</button>
+    </div>
+  </div>
+</div>
+<!-- <div>-----------------------------------------</div>
+<div class="animation-container query-list">
+  `group animateChild stagger animate transition`
+  <div class="inner">
+    <div *ngIf="showList" class="list" [@ListAnimation]="itemList.length"
+      (@ListAnimation.done)="ListAnimationDone($event)">
+      <div [@ItemAnimation]="animationState" (@ItemAnimation.done)="ItemAnimationDone($event)" class="query-item"
+        *ngFor="let item of itemList; index as i" (click)="deleteItem(i)">
+        <div>say：{{item.name}}</div>
+        <div>answer：你是第{{i + 1}}项</div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button (click)="addItem()">+1个喽</button>
+      <button (click)="initList()">init</button>
+      <button (click)="showList = !showList">{{showList ? 'hidden' : 'show'}}</button>
+    </div>
+  </div>
+</div> -->
