@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AngularAnimationComponent } from './angular-animation/angular-animation.component';
 import { CssAnimationComponent } from './css-animation/css-animation.component';
+import { LottieComponent } from './lottie/lottie.component';
+import { EarthComponent } from './earth/earth.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { CssAnimationComponent } from './css-animation/css-animation.component';
     HomeComponent,
     AngularAnimationComponent,
     CssAnimationComponent,
+    LottieComponent,
+    EarthComponent,
   ],
   imports: [
     BrowserModule,
